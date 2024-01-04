@@ -24,6 +24,17 @@ Consumer project:
 4. `php artisan migrate`
 5. `php -S localhost:9091 -t public`
 
+# RabbitMQ settings
+
+RabbitMQ settings are in the `env` file.
+
+`RABBITMQ_HOST` - host (default `localhost`)
+
+`RABBITMQ_PORT` - port (default `5672`)
+
+`RABBITMQ_USER` - user (default `user`)
+
+`RABBITMQ_PASS` - password (default `pass`)
 
 # Laravel freymvorkida RabbitMQ ishlashiga sodda misol[uz]
 
@@ -50,3 +61,15 @@ Consumer proyekti:
 3. Ma'lumotlar bazasi sozlamarini `env` faylga yozib qo'ying.
 4. `php artisan migrate`
 5. `php -S localhost:9091 -t public`
+
+# RabbitMQ sozlamari
+
+RabbitMQ-ning sozlamari `env` fayliga yoziladi.
+
+`RABBITMQ_HOST` - host (boshlang'ich holatda `localhost`)
+
+`RABBITMQ_PORT` - port (boshlang'ich holatda `5672`)
+
+`RABBITMQ_USER` - user (boshlang'ich holatda `user`)
+
+`RABBITMQ_PASS` - parol (boshlang'ich holatda `pass`)
