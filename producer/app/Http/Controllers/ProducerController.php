@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
+use App\Services\FileService;
 use Exception;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
@@ -18,10 +19,7 @@ class ProducerController extends Controller
     public function __invoke(PostRequest $request)
     {
         $data = $request->validated();
-
-        $fileName = time() . '_' . $data['image']->getClientOriginalName();
-        $path = $data['image']->storeAs('posts', $fileName, 'public');
-        $data['image'] = $path;
+        $data['image'] = FileService::saveImage($data['image'], 'posts');
 
         try {
             $this->channel->queue_declare('rabbitmq_test', false, false, false, false);
